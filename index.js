@@ -3,7 +3,7 @@ const express = require('express')
 const uuid = require('uuid')
 const cors = require("cors")
 
-const port = 3019
+const port = "https://first-react-eta.vercel.app/"
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -14,7 +14,7 @@ const users = []
 
 // //*?--- ROTA DE CADASTRO DE USUÁRIO ---?*//
 
-app.post('/users', (request, response) => {
+app.post('https://first-react-eta.vercel.app/users', (request, response) => {
 
     const { name, age } = request.body
     const user = { id: uuid.v4(), name, age }
@@ -30,7 +30,7 @@ app.post('/users', (request, response) => {
 
 //*?--- ROTA DE CONSULTA DE TODOS OS PEDIDOS ---?*//
 
- app.get('/users', (request, response) => {
+ app.get('https://first-react-eta.vercel.app/users', (request, response) => {
      return response.json(users)
 
  })
@@ -38,7 +38,7 @@ app.post('/users', (request, response) => {
 
 // //*?--- ROTA DE BUSCAR O PEDIDO PELO ID ---?*//
 
- app.get('/users/:id', (request, response) => {
+ app.get('https://first-react-eta.vercel.app/users/:id', (request, response) => {
 
      const index = request.orderIndex
      const status = users[index]
@@ -50,7 +50,7 @@ app.post('/users', (request, response) => {
 
  //*?---  ROTA DE EXCLUIR O PEDIDO  ---?*//
 
- app.delete('/users/:id',  (request, response) => {
+ app.delete('https://first-react-eta.vercel.app/users/:id',  (request, response) => {
 
      const { id } = request.params
      const index = users.findIndex(req => req.id === id)
